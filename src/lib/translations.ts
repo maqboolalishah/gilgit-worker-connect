@@ -35,19 +35,18 @@ export const translations = {
   security_guard: { en: 'Security Guard', ur: 'چوکیدار' },
   other: { en: 'Other', ur: 'دیگر' },
   
-  // Locations
-  selectLocation: { en: 'Select Location', ur: 'مقام منتخب کریں' },
-  allLocations: { en: 'All Locations', ur: 'تمام مقامات' },
-  gilgit: { en: 'Gilgit', ur: 'گلگت' },
-  skardu: { en: 'Skardu', ur: 'سکردو' },
-  hunza: { en: 'Hunza', ur: 'ہنزہ' },
-  nagar: { en: 'Nagar', ur: 'نگر' },
-  ghizer: { en: 'Ghizer', ur: 'غذر' },
-  diamer: { en: 'Diamer', ur: 'دیامر' },
-  astore: { en: 'Astore', ur: 'استور' },
-  ghanche: { en: 'Ghanche', ur: 'گھانچے' },
-  shigar: { en: 'Shigar', ur: 'شگر' },
-  kharmang: { en: 'Kharmang', ur: 'کھرمنگ' },
+  // Locations (Mohalas/Neighborhoods)
+  selectLocation: { en: 'Select Mohala', ur: 'محلہ منتخب کریں' },
+  allLocations: { en: 'All Mohalas', ur: 'تمام محلات' },
+  daniyor: { en: 'Daniyor', ur: 'دانیور' },
+  khomer: { en: 'Khomer', ur: 'کھومر' },
+  jaglot: { en: 'Jaglot', ur: 'جگلوٹ' },
+  nomal: { en: 'Nomal', ur: 'نومل' },
+  danyore: { en: 'Danyore', ur: 'دانیور' },
+  kargah: { en: 'Kargah', ur: 'کارگاہ' },
+  singal: { en: 'Singal', ur: 'سنگل' },
+  minawar: { en: 'Minawar', ur: 'مناور' },
+  sultanabad: { en: 'Sultanabad', ur: 'سلطان آباد' },
   
   // Worker profile
   hourlyRate: { en: 'Hourly Rate', ur: 'فی گھنٹہ' },

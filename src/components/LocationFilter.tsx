@@ -12,16 +12,16 @@ import {
 type LocationArea = Database['public']['Enums']['location_area'];
 
 const locations: LocationArea[] = [
-  'gilgit',
-  'skardu',
-  'hunza',
-  'nagar',
-  'ghizer',
-  'diamer',
-  'astore',
-  'ghanche',
-  'shigar',
-  'kharmang',
+  'daniyor',
+  'khomer',
+  'jaglot',
+  'nomal',
+  'danyore',
+  'kargah',
+  'singal',
+  'minawar',
+  'sultanabad',
+  'other',
 ];
 
 interface LocationFilterProps {

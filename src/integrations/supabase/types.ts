@@ -199,16 +199,16 @@ export type Database = {
     }
     Enums: {
       location_area:
-        | "gilgit"
-        | "skardu"
-        | "hunza"
-        | "nagar"
-        | "ghizer"
-        | "diamer"
-        | "astore"
-        | "ghanche"
-        | "shigar"
-        | "kharmang"
+        | "daniyor"
+        | "khomer"
+        | "jaglot"
+        | "nomal"
+        | "danyore"
+        | "kargah"
+        | "singal"
+        | "minawar"
+        | "sultanabad"
+        | "other"
       worker_category:
         | "plumber"
         | "electrician"
@@ -350,16 +350,16 @@ export const Constants = {
   public: {
     Enums: {
       location_area: [
-        "gilgit",
-        "skardu",
-        "hunza",
-        "nagar",
-        "ghizer",
-        "diamer",
-        "astore",
-        "ghanche",
-        "shigar",
-        "kharmang",
+        "daniyor",
+        "khomer",
+        "jaglot",
+        "nomal",
+        "danyore",
+        "kargah",
+        "singal",
+        "minawar",
+        "sultanabad",
+        "other",
       ],
       worker_category: [
         "plumber",

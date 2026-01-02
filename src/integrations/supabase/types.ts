@@ -103,6 +103,93 @@ export type Database = {
           },
         ]
       }
+      blogs: {
+        Row: {
+          id: string
+          title: string
+          content: string
+          image_url: string | null
+          author: string
+          created_at: string
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          title: string
+          content: string
+          image_url?: string | null
+          author?: string
+          created_at?: string
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          title?: string
+          content?: string
+          image_url?: string | null
+          author?: string
+          created_at?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      queries: {
+        Row: {
+          id: string
+          name: string
+          email: string
+          phone: string | null
+          subject: string
+          message: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          email: string
+          phone?: string | null
+          subject: string
+          message: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          email?: string
+          phone?: string | null
+          subject?: string
+          message?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
+      feedbacks: {
+        Row: {
+          id: string
+          name: string
+          email: string
+          rating: number
+          feedback: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          email: string
+          rating: number
+          feedback: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          email?: string
+          rating?: number
+          feedback?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

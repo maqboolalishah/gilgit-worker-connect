@@ -57,12 +57,31 @@ const Auth = () => {
     setLoading(true);
     try {
       if (isLogin) {
-        const { error } = await signIn(email, password);
-        if (error) {
-          toast.error(t('loginError', language));
+        // Admin credentials: email: maqboolali741@gmail.com, password: Maqbool123456@@##
+        const adminEmail = 'maqboolali741@gmail.com';
+        const adminPassword = 'Maqbool123456@@##';
+        
+        // Check if this is admin login attempt
+        const isAdminLogin = email.toLowerCase() === adminEmail && password === adminPassword;
+        
+        if (isAdminLogin) {
+          // Attempt to sign in with admin credentials
+          const { error } = await signIn(adminEmail, adminPassword);
+          if (error) {
+            toast.error(t('loginError', language));
+          } else {
+            toast.success(t('loginSuccess', language));
+            navigate('/profile');
+          }
         } else {
-          toast.success(t('loginSuccess', language));
-          navigate('/profile');
+          // Regular user login
+          const { error } = await signIn(email, password);
+          if (error) {
+            toast.error(t('loginError', language));
+          } else {
+            toast.success(t('loginSuccess', language));
+            navigate('/profile');
+          }
         }
       } else {
         const { error } = await signUp(email, password);

@@ -55,13 +55,18 @@ export const translations = {
   perHour: { en: '/hour', ur: '/گھنٹہ' },
   perDay: { en: '/day', ur: '/دن' },
   rs: { en: 'Rs.', ur: 'روپے' },
+  rate: { en: 'Rate', ur: 'ریٹ' },
   callNow: { en: 'Call Now', ur: 'ابھی کال کریں' },
   whatsapp: { en: 'WhatsApp', ur: 'واٹس ایپ' },
   reviews: { en: 'Reviews', ur: 'جائزے' },
+  review: { en: 'Review', ur: 'جائزہ' },
   noReviews: { en: 'No reviews yet', ur: 'ابھی کوئی جائزہ نہیں' },
   writeReview: { en: 'Write a Review', ur: 'جائزہ لکھیں' },
+  beFirstToReview: { en: 'Be the first to review', ur: 'پہلا جائزہ لکھیں' },
   available: { en: 'Available', ur: 'دستیاب' },
   notAvailable: { en: 'Not Available', ur: 'دستیاب نہیں' },
+  worker: { en: 'Worker', ur: 'کاریگر' },
+  about: { en: 'About', ur: 'کے بارے میں' },
   
   // Forms
   fullName: { en: 'Full Name', ur: 'پورا نام' },
@@ -112,6 +117,43 @@ export const translations = {
   
   // Footer
   madeWith: { en: 'Made for Gilgit-Baltistan', ur: 'گلگت بلتستان کے لیے بنایا گیا' },
+  
+  // Blog
+  blogs: { en: 'Blogs', ur: 'بلاگز' },
+  blog: { en: 'Blog', ur: 'بلاگ' },
+  addBlog: { en: 'Add Blog', ur: 'بلاگ شامل کریں' },
+  blogTitle: { en: 'Blog Title', ur: 'بلاگ کا عنوان' },
+  blogContent: { en: 'Blog Content', ur: 'بلاگ کا مواد' },
+  blogImage: { en: 'Blog Image URL', ur: 'بلاگ کی تصویر کا یو آر ایل' },
+  createBlog: { en: 'Create Blog', ur: 'بلاگ بنائیں' },
+  updateBlog: { en: 'Update Blog', ur: 'بلاگ اپڈیٹ کریں' },
+  blogCreated: { en: 'Blog created successfully!', ur: 'بلاگ کامیابی سے بنایا گیا!' },
+  blogUpdated: { en: 'Blog updated successfully!', ur: 'بلاگ کامیابی سے اپڈیٹ ہو گیا!' },
+  noBlogs: { en: 'No blogs found', ur: 'کوئی بلاگ نہیں ملا' },
+  readMore: { en: 'Read More', ur: 'مزید پڑھیں' },
+  publishedOn: { en: 'Published on', ur: 'شائع شدہ' },
+  by: { en: 'By', ur: 'بذریعہ' },
+  
+  // Header
+  becomeATeam: { en: 'Become a Team', ur: 'ٹیم بنیں' },
+  username: { en: 'Username', ur: 'صارف نام' },
+  useUsername: { en: 'Use Username', ur: 'صارف نام استعمال کریں' },
+  useEmail: { en: 'Use Email', ur: 'ای میل استعمال کریں' },
+  
+  // Contact & Feedback
+  contact: { en: 'Contact', ur: 'رابطہ' },
+  feedback: { en: 'Feedback', ur: 'رائے' },
+  getInTouch: { en: 'Get in Touch', ur: 'رابطہ کریں' },
+  phone: { en: 'Phone', ur: 'فون' },
+  sendMessage: { en: 'Send Message', ur: 'پیغام بھیجیں' },
+  subject: { en: 'Subject', ur: 'موضوع' },
+  message: { en: 'Message', ur: 'پیغام' },
+  querySubmitted: { en: 'Query submitted successfully!', ur: 'سوال کامیابی سے جمع کرایا گیا!' },
+  shareFeedback: { en: 'Share Your Feedback', ur: 'اپنی رائے شیئر کریں' },
+  yourFeedback: { en: 'Your Feedback', ur: 'آپ کی رائے' },
+  submitFeedback: { en: 'Submit Feedback', ur: 'رائے جمع کروائیں' },
+  feedbackSubmitted: { en: 'Feedback submitted successfully!', ur: 'رائے کامیابی سے جمع کرائی گئی!' },
+  allRightsReserved: { en: 'All rights reserved', ur: 'تمام حقوق محفوظ ہیں' },
 };
 
 export function t(key: keyof typeof translations, lang: Language): string {

@@ -23,63 +23,72 @@ export function WorkerCard({ worker }: WorkerCardProps) {
 
   return (
     <Link to={`/worker/${worker.id}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+      <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-white/20 hover:border-primary/40 group h-full bg-white/10 backdrop-blur-md">
         <CardContent className="p-0">
-          <div className="flex gap-4 p-4">
-            {/* Profile Photo */}
-            <div className="flex-shrink-0">
-              {worker.profile_photo_url ? (
-                <img
-                  src={worker.profile_photo_url}
-                  alt={worker.full_name}
-                  className="h-20 w-20 rounded-full object-cover border-2 border-border"
-                />
-              ) : (
-                <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center border-2 border-border">
-                  <User className="h-10 w-10 text-muted-foreground" />
-                </div>
-              )}
-            </div>
+          {/* Profile Photo Header */}
+          <div className="relative h-32 bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
+            {worker.profile_photo_url ? (
+              <img
+                src={worker.profile_photo_url}
+                alt={worker.full_name}
+                className="h-24 w-24 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            ) : (
+              <div className="h-24 w-24 rounded-full bg-primary/20 flex items-center justify-center border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <User className="h-12 w-12 text-primary" />
+              </div>
+            )}
+          </div>
 
-            {/* Info */}
-            <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-lg truncate">{worker.full_name}</h3>
-              
-              <Badge variant="secondary" className="mt-1">
+          {/* Info Section */}
+          <div className="p-4 sm:p-5 space-y-3 bg-white/5">
+            <div>
+              <h3 className="font-bold text-base sm:text-lg truncate group-hover:text-primary-foreground transition-colors text-white drop-shadow-md">
+                {worker.full_name}
+              </h3>
+              <Badge variant="secondary" className="mt-1.5 text-xs bg-white/20 text-white border-white/30">
                 {t(worker.category as keyof typeof t, language)}
               </Badge>
+            </div>
 
-              <div className="flex items-center gap-1 mt-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4" />
-                <span>{t(worker.location as keyof typeof t, language)}</span>
-              </div>
+            <div className="flex items-center gap-1.5 text-white/80 text-sm">
+              <MapPin className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">{t(worker.location as keyof typeof t, language)}</span>
+            </div>
 
-              <div className="flex items-center justify-between mt-3">
-                {/* Rating */}
-                {avgRating && (
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <span className="font-medium">{avgRating}</span>
-                    <span className="text-muted-foreground text-sm">
-                      ({reviews?.length})
-                    </span>
-                  </div>
-                )}
-
-                {/* Rate */}
-                <div className="text-end">
-                  {worker.daily_rate && (
-                    <div className="font-semibold text-primary">
-                      {t('rs', language)} {worker.daily_rate}{t('perDay', language)}
-                    </div>
-                  )}
-                  {worker.hourly_rate && !worker.daily_rate && (
-                    <div className="font-semibold text-primary">
-                      {t('rs', language)} {worker.hourly_rate}{t('perHour', language)}
-                    </div>
-                  )}
+            {/* Rating */}
+            {avgRating && (
+              <div className="flex items-center gap-1.5 pt-1">
+                <div className="flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span className="font-semibold text-sm text-white">{avgRating}</span>
                 </div>
+                <span className="text-white/70 text-xs">
+                  ({reviews?.length} {reviews?.length === 1 ? t('review', language) : t('reviews', language)})
+                </span>
               </div>
+            )}
+
+            {/* Rate */}
+            <div className="pt-2 border-t border-white/20">
+              {worker.daily_rate && (
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-white/70">{t('rate', language)}</span>
+                  <span className="font-bold text-base sm:text-lg text-primary-foreground">
+                    {t('rs', language)} {worker.daily_rate}
+                    <span className="text-xs font-normal text-white/70">/{t('perDay', language)}</span>
+                  </span>
+                </div>
+              )}
+              {worker.hourly_rate && !worker.daily_rate && (
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-white/70">{t('rate', language)}</span>
+                  <span className="font-bold text-base sm:text-lg text-primary-foreground">
+                    {t('rs', language)} {worker.hourly_rate}
+                    <span className="text-xs font-normal text-white/70">/{t('perHour', language)}</span>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </CardContent>

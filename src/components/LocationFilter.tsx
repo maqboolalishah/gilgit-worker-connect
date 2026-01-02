@@ -37,7 +37,7 @@ export function LocationFilter({ value, onChange }: LocationFilterProps) {
       value={value || 'all'}
       onValueChange={(v) => onChange(v === 'all' ? null : v as LocationArea)}
     >
-      <SelectTrigger className="w-full sm:w-[200px]">
+      <SelectTrigger className="w-full sm:w-[220px] h-14 text-base border-0 focus:ring-2 focus:ring-primary/20">
         <SelectValue placeholder={t('selectLocation', language)} />
       </SelectTrigger>
       <SelectContent>

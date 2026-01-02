@@ -9,6 +9,7 @@ interface AuthContextType {
   signUp: (email: string, password: string) => Promise<{ error: Error | null }>;
   signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
   signOut: () => Promise<void>;
+  isAdmin: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -63,8 +64,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await supabase.auth.signOut();
   };
 
+  // Check if user is admin
+  // Admin credentials: email: maqboolali741@gmail.com, password: Maqbool123456@@##
+  const isAdmin = user?.email?.toLowerCase() === 'maqboolali741@gmail.com' ||
+                  user?.user_metadata?.isAdmin === true;
+
   return (
-    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut, isAdmin }}>
       {children}
     </AuthContext.Provider>
   );

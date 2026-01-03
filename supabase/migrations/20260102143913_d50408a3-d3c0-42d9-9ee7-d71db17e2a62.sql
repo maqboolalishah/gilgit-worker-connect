@@ -14,18 +14,18 @@ CREATE TYPE public.worker_category AS ENUM (
   'other'
 );
 
--- Create enum for location areas
+-- Create enum for location areas (Mohalas/Neighborhoods)
 CREATE TYPE public.location_area AS ENUM (
-  'gilgit',
-  'skardu',
-  'hunza',
-  'nagar',
-  'ghizer',
-  'diamer',
-  'astore',
-  'ghanche',
-  'shigar',
-  'kharmang'
+  'daniyor',
+  'khomer',
+  'jaglot',
+  'nomal',
+  'danyore',
+  'kargah',
+  'singal',
+  'minawar',
+  'sultanabad',
+  'other'
 );
 
 -- Create profiles table for authenticated users (workers)

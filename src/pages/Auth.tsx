@@ -86,10 +86,16 @@ const Auth = () => {
       } else {
         const { error } = await signUp(email, password);
         if (error) {
-          if (error.message.includes('already registered')) {
+          if (error.message.includes('already registered') || error.message.includes('already been registered')) {
             toast.error(language === 'en' ? 'Email already registered. Please login.' : 'ای میل پہلے سے رجسٹرڈ ہے۔ براہ کرم لاگ ان کریں۔');
+          } else if (error.message.includes('Signups not allowed') || error.message.includes('signups_disabled')) {
+            toast.error(
+              language === 'en' 
+                ? 'Signups are currently disabled. Please contact support.' 
+                : 'رجسٹریشن فی الوقت بند ہے۔ براہ کرم سپورٹ سے رابطہ کریں۔'
+            );
           } else {
-            toast.error(error.message);
+            toast.error(error.message || (language === 'en' ? 'Failed to create account. Please try again.' : 'اکاؤنٹ بنانے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں۔'));
           }
         } else {
           toast.success(t('signupSuccess', language));
